@@ -23,7 +23,7 @@ frame = plt.gca()
 frame.axes.get_yaxis().set_visible(False)
 # x 轴不可见
 frame.axes.get_xaxis().set_visible(False)
-# plt.savefig('imgs/result_250.jpg')
+plt.savefig('imgs/result_250.jpg', bbox_inches='tight', pad_inches=0)
 plt.show()
 
 
