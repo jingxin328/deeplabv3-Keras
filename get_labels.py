@@ -4,17 +4,7 @@ import numpy as np
 from model import Deeplabv3
 
 
-deeplab_model = Deeplabv3(input_shape=(376, 1241, 3), classes=4)
-img = plt.imread("imgs/110.jpg")
-print(img.shape)
-img = img / 127.5 - 1
-res = deeplab_model.predict(np.expand_dims(img, 0))
-labels = np.argmax(res.squeeze(), -1)
-plt.imshow(labels)
-plt.show()
-
-'''
-deeplab_model = Deeplabv3()
+deeplab_model = Deeplabv3(weights='cityscapes')
 img = plt.imread("imgs/250.jpg")
 print(img.shape)
 w, h, _ = img.shape
@@ -35,5 +25,5 @@ frame.axes.get_yaxis().set_visible(False)
 frame.axes.get_xaxis().set_visible(False)
 plt.savefig('imgs/result_250.jpg', bbox_inches='tight', pad_inches=0)
 plt.show()
-'''
+
 
