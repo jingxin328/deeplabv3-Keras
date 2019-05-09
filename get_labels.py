@@ -4,7 +4,8 @@ import numpy as np
 from model import Deeplabv3
 
 
-deeplab_model = Deeplabv3(weights='cityscapes')
+deeplab_model = Deeplabv3()
+deeplab_model.summary()
 img = plt.imread("imgs/250.jpg")
 print(img.shape)
 w, h, _ = img.shape
